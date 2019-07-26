@@ -1,6 +1,6 @@
 package com.lambdaschool.starthere.services;
 
-import com.lambdaschool.starthere.exceptions.ResourceNotFoundException;
+import com.lambdaschool.school.exceptions.ResourceNotFoundException;
 import com.lambdaschool.starthere.models.Quote;
 import com.lambdaschool.starthere.repository.QuoteRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -43,7 +43,7 @@ public class QuoteServiceImpl implements QuoteService
                 quoterepos.deleteById(id);
             } else
             {
-                throw new ResourceNotFoundException(id + " " + authentication.getName());
+                throw new com.lambdaschool.school.exceptions.ResourceNotFoundException(id + " " + authentication.getName());
             }
         } else
         {

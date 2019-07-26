@@ -1,6 +1,6 @@
 package com.lambdaschool.starthere.services;
 
-import com.lambdaschool.starthere.exceptions.ResourceNotFoundException;
+import com.lambdaschool.school.exceptions.ResourceNotFoundException;
 import com.lambdaschool.starthere.models.Quote;
 import com.lambdaschool.starthere.models.User;
 import com.lambdaschool.starthere.models.UserRoles;
@@ -40,7 +40,7 @@ public class UserServiceImpl implements UserDetailsService, UserService
         return new org.springframework.security.core.userdetails.User(user.getUsername(), user.getPassword(), user.getAuthority());
     }
 
-    public User findUserById(long id) throws ResourceNotFoundException
+    public User findUserById(long id) throws com.lambdaschool.school.exceptions.ResourceNotFoundException
     {
         return userrepos.findById(id).orElseThrow(() -> new ResourceNotFoundException(Long.toString(id)));
     }
